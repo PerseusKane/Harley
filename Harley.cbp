@@ -14,6 +14,12 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-audio-d" />
+					<Add library="sfml-system-d" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Harley" prefix_auto="1" extension_auto="1" />
@@ -25,12 +31,39 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-audio" />
+					<Add library="sfml-system" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/sfml/include" />
 		</Compiler>
+		<Linker>
+			<Add directory="C:/Program Files (x86)/CodeBlocks/sfml/lib" />
+		</Linker>
+		<Unit filename="Sources/ability.cpp" />
+		<Unit filename="Sources/ability.h" />
+		<Unit filename="Sources/attack.cpp" />
+		<Unit filename="Sources/attack.h" />
+		<Unit filename="Sources/battle.cpp" />
+		<Unit filename="Sources/battle.h" />
+		<Unit filename="Sources/constants.h" />
+		<Unit filename="Sources/harley.cpp" />
+		<Unit filename="Sources/harley.h" />
+		<Unit filename="Sources/healthregenability.cpp" />
+		<Unit filename="Sources/map.cpp" />
+		<Unit filename="Sources/map.h" />
+		<Unit filename="Sources/overworld.cpp" />
+		<Unit filename="Sources/overworld.h" />
+		<Unit filename="Sources/player.cpp" />
+		<Unit filename="Sources/player.h" />
+		<Unit filename="Sources/situation.h" />
+		<Unit filename="Sources/tile.cpp" />
+		<Unit filename="Sources/tile.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
