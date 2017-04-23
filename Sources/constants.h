@@ -1,1 +1,12 @@
+#ifndef __CONSTANTS_H_
+#define __CONSTANTS_H_
 
+#define TILE_SIZE 16
+
+#define SCREEN_WIDTH 320
+#define SCREEN_HEIGHT 240
+
+#define TILE_WIDTH (SCREEN_WIDTH/TILE_SIZE)
+#define TILE_HEIGHT (SCREEN_HEIGHT/TILE_SIZE)
+
+#endif // __CONSTANTS_H_
