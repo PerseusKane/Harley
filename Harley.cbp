@@ -13,12 +13,26 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DSFML_STATIC" />
 				</Compiler>
 				<Linker>
-					<Add library="sfml-graphics-d" />
-					<Add library="sfml-window-d" />
-					<Add library="sfml-audio-d" />
-					<Add library="sfml-system-d" />
+					<Add library="sfml-graphics-s-d" />
+					<Add library="freetype" />
+					<Add library="jpeg" />
+					<Add library="sfml-window-s-d" />
+					<Add library="opengl32" />
+					<Add library="gdi32" />
+					<Add library="sfml-audio-s-d" />
+					<Add library="openal32" />
+					<Add library="flac" />
+					<Add library="vorbisenc" />
+					<Add library="vorbisfile" />
+					<Add library="vorbis" />
+					<Add library="ogg" />
+					<Add library="sfml-network-s-d" />
+					<Add library="ws2_32" />
+					<Add library="sfml-system-s-d" />
+					<Add library="winmm" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -28,18 +42,31 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-DSFML_STATIC" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="sfml-graphics" />
-					<Add library="sfml-window" />
-					<Add library="sfml-audio" />
-					<Add library="sfml-system" />
+					<Add library="sfml-graphics-s" />
+					<Add library="freetype" />
+					<Add library="jpeg" />
+					<Add library="sfml-window-s" />
+					<Add library="opengl32" />
+					<Add library="gdi32" />
+					<Add library="sfml-audio-s" />
+					<Add library="openal32" />
+					<Add library="flac" />
+					<Add library="vorbisenc" />
+					<Add library="vorbisfile" />
+					<Add library="vorbis" />
+					<Add library="ogg" />
+					<Add library="sfml-system-s" />
+					<Add library="winmm" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-DSFML_STATIC" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/sfml/include" />
 		</Compiler>
 		<Linker>
@@ -47,20 +74,27 @@
 		</Linker>
 		<Unit filename="Sources/ability.cpp" />
 		<Unit filename="Sources/ability.h" />
+		<Unit filename="Sources/ability.obj" />
 		<Unit filename="Sources/attack.cpp" />
 		<Unit filename="Sources/attack.h" />
+		<Unit filename="Sources/attack.obj" />
 		<Unit filename="Sources/battle.cpp" />
 		<Unit filename="Sources/battle.h" />
 		<Unit filename="Sources/constants.h" />
 		<Unit filename="Sources/harley.cpp" />
 		<Unit filename="Sources/harley.h" />
 		<Unit filename="Sources/healthregenability.cpp" />
+		<Unit filename="Sources/main.cpp" />
+		<Unit filename="Sources/main.obj" />
 		<Unit filename="Sources/map.cpp" />
 		<Unit filename="Sources/map.h" />
+		<Unit filename="Sources/map.obj" />
 		<Unit filename="Sources/overworld.cpp" />
 		<Unit filename="Sources/overworld.h" />
 		<Unit filename="Sources/player.cpp" />
 		<Unit filename="Sources/player.h" />
+		<Unit filename="Sources/player.obj" />
+		<Unit filename="Sources/sfml.h" />
 		<Unit filename="Sources/situation.h" />
 		<Unit filename="Sources/tile.cpp" />
 		<Unit filename="Sources/tile.h" />
