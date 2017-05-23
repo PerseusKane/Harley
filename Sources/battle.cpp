@@ -34,6 +34,8 @@ namespace Harley
         sprite.setPosition(x*SCALE, (y+TILE_SIZE-PLAYER_HEIGHT)*SCALE);
         window.draw(sprite);
 
+        enemy.draw(window);
+
     }
 
     void Battle::startUp(){
@@ -75,7 +77,8 @@ namespace Harley
     }
 
     void Battle::update(){
-        std::cout << y << ", " << y / TILE_SIZE << std::endl;
+        int t_y = y / TILE_SIZE;
+        std::cout << y << ", " << y / TILE_SIZE << ", " << t_y << std::endl;
         if (falling){
             y += yspeed;
             yspeed += 1;
@@ -86,25 +89,24 @@ namespace Harley
             x -= character->getSpeed();
         }
         int t_x = x / TILE_SIZE;
-        int t_y = y / TILE_SIZE;
-        int topleft = map->tileAt(x/TILE_SIZE, y/TILE_SIZE);
-        int topright = map->tileAt((x+TILE_SIZE-1)/TILE_SIZE, y/TILE_SIZE);
-        int bottomleft = map->tileAt(x/TILE_SIZE, (y+TILE_SIZE-1)/TILE_SIZE);
-        int bottomright = map->tileAt((x+TILE_SIZE-1)/TILE_SIZE, (y+TILE_SIZE-1)/TILE_SIZE);
+        int topleft = map->tileAt(t_x, t_y);
+        int topright = map->tileAt(t_x+1, t_y);
+        int bottomleft = map->tileAt(t_x, t_y+1);
+        int bottomright = map->tileAt(t_x+1, t_y+1);
         if (topleft == 1 && bottomleft == 1){
-            x = (x/TILE_SIZE+1)*TILE_SIZE;
+            x = (t_x+1)*TILE_SIZE;
             topleft = topright;
             bottomleft = bottomright;
         } else if (topright == 1 && bottomright == 1){
-            x = (x/TILE_SIZE)*TILE_SIZE;
+            x = (t_x)*TILE_SIZE;
             topright = topleft;
             bottomright = bottomleft;
         }
         if (topleft == 1 && topright == 1){
-            y = (y/TILE_SIZE+1)*TILE_SIZE;
+            y = (t_y+1)*TILE_SIZE;
             yspeed = 0;
         } else if ((bottomleft == 1 || bottomright == 1) && yspeed > 1){
-            y = (y/TILE_SIZE)*TILE_SIZE;
+            y = (t_y)*TILE_SIZE;
             if (!jumping){
                 yspeed = 0;
                 falling = false;

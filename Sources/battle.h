@@ -8,6 +8,7 @@
 #include "tile.h"
 #include "map.h"
 #include "player.h"
+#include "enemytest.h"
 
 namespace Harley {
     class Battle : public Situation {
@@ -15,6 +16,7 @@ namespace Harley {
         sf::Sprite background;
         Map *map;
         Player *character;
+        EnemyTest enemy;
 
         bool movingRight;
         bool movingLeft;

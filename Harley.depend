@@ -9,18 +9,19 @@
 
 1492896712 c:\users\dakot\projectharley\harleywin\projectharley.git\sources\attack.h
 
-1495223691 source:c:\users\dakot\projectharley\harleywin\projectharley.git\sources\battle.cpp
+1495483057 source:c:\users\dakot\projectharley\harleywin\projectharley.git\sources\battle.cpp
 	"sfml.h"
 	"battle.h"
 	"constants.h"
 
-1495040025 c:\users\dakot\projectharley\harleywin\projectharley.git\sources\battle.h
+1495483105 c:\users\dakot\projectharley\harleywin\projectharley.git\sources\battle.h
 	<string>
 	"sfml.h"
 	"situation.h"
 	"tile.h"
 	"map.h"
 	"player.h"
+	"enemytest.h"
 
 1492908110 c:\users\dakot\projectharley\harleywin\projectharley.git\sources\situation.h
 	"sfml.h"
@@ -583,4 +584,14 @@
 	"constants.h"
 	"sfml.h"
 	<iostream>
+
+1495482554 c:\users\dakot\projectharley\harleywin\projectharley.git\sources\enemy.h
+	"sfml.h"
+	"map.h"
+	"player.h"
+
+1495483156 c:\users\dakot\projectharley\harleywin\projectharley.git\sources\enemytest.h
+	"enemy.h"
+	"map.h"
+	"player.h"
 
