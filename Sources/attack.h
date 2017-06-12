@@ -3,9 +3,13 @@
 
 namespace Harley
 {
-    class SpecialAttack
+    struct Attack
     {
-        /* To be implemented. */
+        int x;
+        int y;
+        int radius;
+        int strength;
+        int type;
     };
 }
 

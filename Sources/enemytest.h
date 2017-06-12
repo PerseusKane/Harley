@@ -2,26 +2,22 @@
 #define __ENEMYTEST_H_
 
 #include "enemy.h"
-#include "map.h"
-#include "player.h"
+#include "attack.h"
+#include "sfml.h"
 
 namespace Harley {
-class EnemyTest : public Enemy
-{
-    public:
-        EnemyTest();
-        virtual void draw(sf::RenderWindow&);
-        virtual void update(Map&, Player&);
-        virtual ~EnemyTest();
-
-    protected:
-
-    private:
-        int x, y, width, height;
-        sf::Texture texture;
-        sf::Sprite sprite;
-};
-
+    class EnemyTest : public Enemy
+    {
+        public:
+            EnemyTest(int x, int y);
+            virtual ~EnemyTest();
+            void update();
+            void redraw(sf::RenderWindow&);
+        protected:
+        private:
+            sf::Texture texture;
+            sf::Sprite sprite;
+    };
 }
 
 #endif // __ENEMYTEST_H_

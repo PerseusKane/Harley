@@ -1,27 +1,34 @@
-#include "EnemyTest.h"
+#include "enemytest.h"
 #include "constants.h"
 
-namespace Harley {
-EnemyTest::EnemyTest()
-{
-    x = 6;
-    y = 11;
-    texture.loadFromFile("Resources/EnemyTEST.png");
-    texture.setSmooth(false);
-    width = texture.getSize().x;
-    height = texture.getSize().y;
-    sprite.setTexture(texture);
-    sprite.setScale(SCALE, SCALE);
-}
+namespace Harley{
+    EnemyTest::EnemyTest(int x, int y)
+    {
+        Attack attack;
+        attack.x = x;
+        attack.y = y;
+        attack.radius = 8;
+        attack.strength = 2;
+        attack.type = 0;
+        attacks.push_back(attack);
+        texture.loadFromFile("Resources/enemytest.png");
+        texture.setSmooth(false);
+        sprite.setTexture(texture);
+        sprite.setScale(SCALE, SCALE);
+    }
 
-EnemyTest::draw(sf::RenderWindow& window){
-    sprite.setPosition(x*TILE_SIZE, y*TILE_SIZE);
-    window.draw(sprite);
-}
+    EnemyTest::~EnemyTest()
+    {
+        //dtor
+    }
 
-EnemyTest::~EnemyTest()
-{
-    //dtor
-}
+    void EnemyTest::update(){
 
+    }
+
+    void EnemyTest::redraw(sf::RenderWindow& window){
+        Attack attack = attacks.at(0);
+        sprite.setPosition((attack.x - 8)*SCALE, (attack.y - 8)*SCALE);
+        window.draw(sprite);
+    }
 }

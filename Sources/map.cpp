@@ -6,9 +6,12 @@
 
 namespace Harley
 {
-	Map::Map (std::string name, int width, int height, int chunk_width, int chunk_height)
+    Map::Map(){}
+
+	void Map::load_chunks(std::string name, int width, int height, int chunk_width, int chunk_height)
     {
         std::string line;
+        int tiles[height][width];
         int chunk_x_offset = 0;
         int chunk_y_offset = 0;
         int chunk_x_increment = width / chunk_width;
@@ -22,16 +25,12 @@ namespace Harley
                 int y = 0;
                 int x;
                 while (std::getline(content, line)){
-                    while (chunk_y_offset+y >= tiles.size()){
-                        std::vector<int> row;
-                        tiles.push_back(row);
-                    }
                     std::istringstream data(line);
                     x = 0;
                     int i;
                     char c;
                     while (data >> i){
-                        tiles[chunk_y_offset+y].push_back(i);
+                        tiles[chunk_y_offset+y][chunk_x_offset+x] = i;
                         x++;
                         data >> c;
                     }
@@ -41,9 +40,18 @@ namespace Harley
             }
             chunk_x_offset += chunk_x_increment;
         }
+        for (int y = 0; y < height; y++){
+            std::vector<int> row;
+            for (int x = 0; x < width; x++){
+                //std::cout << tiles[y][x] << ", ";
+                row.push_back(tiles[y][x]);
+            }
+            //std::cout << std::endl;
+            this->tiles.push_back(row);
+        }
     }
 
-    Map::Map(std::string name){
+    void Map::load(std::string name){
         std::ifstream content(("Resources/" + name + ".csv").c_str());
         std::string line;
         while (std::getline(content, line)){
