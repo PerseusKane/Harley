@@ -1,0 +1,20 @@
+Instruments:
+Flute 1
+Flute 2
+Oboe
+Bass Clarinet
+Piano
+Glockenspiel
+Sleigh Bells
+Drum Set
+Violin
+Viola
+Cello
+Double Bass
+
+Tempo:100 bpm 4/4ths time
+Key of D Major, B Minor
+Mood: Snowy, warm
+
+Inspiration:
+Holaska Day (https://www.youtube.com/watch?v=vkpErV1nGk8&list=PLEsq3QfKZhGNWEYnLZPBb6va6TLWSLQ-s&index=4&t=6s)
